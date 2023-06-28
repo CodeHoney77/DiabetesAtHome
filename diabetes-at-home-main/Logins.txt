@@ -1,0 +1,31 @@
+Clinicians ------------------------------------------
+Username                    |   Password
+----------------------------|------------------------
+chris@gmail.com             |   99Funk67CC
+                            |
+jeff.jj@hotmail.com         |   jumpStreet22
+
+
+
+Patients ------------------------------------------
+Username                    |   Password
+                            |
+pat@gmail.com               |   PatTheGoat123
+                            |
+tony@starkindustries.com    |   ACDC_rock3000
+                            |
+sonofodin@asgard.com        |   myHammer6761
+                            |
+fury@shield.com             |   MaceW1ndu66
+                            |
+s.rogers@shield.com         |   TheCap11119
+                            |
+n.romanov@shield.com        |   Sh413lded
+                            |
+bbanner@mac.com             |   BigGr33n499
+                            |
+parker@mit.student.com      |   Sp1d3ym4n
+                            |
+cmarvel@shield.com          |   Sup3rOP123
+                            |
+strange@gmail.com           |   W!z$rdzzz8

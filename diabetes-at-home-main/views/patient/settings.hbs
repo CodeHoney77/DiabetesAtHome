@@ -1,0 +1,67 @@
+<section class="page-content">
+
+    <div class="title-card">
+        <h4>Settings</h4>
+    </div>
+
+    <div class="content-container">
+        <h3 style="text-align:center">Change theme</h3>
+        <ul class="button-list">
+            <li>
+                <form action="./settings/blue" method="POST">
+                    <button class="button" id="theme-blue">Blue</button>
+                </form>
+            </li>
+            <li>
+                <form action="./settings/green" method="POST">
+                    <button class="button" id="theme-green">Green</button>
+                </form>
+            </li>
+            <li>
+                <form action="./settings/purple" method="POST">
+                    <button class="button" id="theme-purple">Purple</button>
+                </form>
+            </li>
+            <br>
+            <li>
+                <a href="/patient/{{patientId}}/editprofile"><button class="button" name="editprofile">Edit Profile</button></a>
+            </li>
+            <br>
+            <br>
+            <br>
+            <li>
+                <form method="POST" action="/logout">
+                    <button class="button logout">Logout</button>
+                </form>
+            </li>
+        </ul>
+        
+    </div>
+
+</section>
+
+<script>
+
+    function setTheme(themeChoice) {
+        if (themeChoice != "none"){
+            document.documentElement.className = themeChoice;
+            localStorage.setItem('theme', themeChoice);
+        }
+    }
+
+    const blueTheme = document.getElementById("theme-blue");
+    blueTheme.addEventListener('click', () => {
+        setTheme("blue");
+    })
+    
+    const greenTheme = document.getElementById("theme-green");
+    greenTheme.addEventListener('click', () => {
+        setTheme("green");
+    })
+
+    const purpleTheme = document.getElementById("theme-purple");
+    purpleTheme.addEventListener('click', () => {
+        setTheme("purple");
+    })
+
+</script>

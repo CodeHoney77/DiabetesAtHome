@@ -1,0 +1,112 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diabetes@Home</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/patient.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <script
+      src="https://kit.fontawesome.com/dee80aadee.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+
+<body>
+    <div class="header-container" id="header-container">
+      <header>
+        <nav>
+          <button class="hamburger icon-button" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+
+          <a href="#" class="site-name">
+            Diabetes@Home
+          </a>
+
+          <div class="icon-container">
+            <a href="./settings">
+              <button class="hamburger icon-button" id="user-icon-hamburger">
+                {{#if isEngaged}}
+                  <img src="/images/user-shield-wide.svg" class="svg-white" alt="" height="50" width="50">
+                {{else}}
+                  <i class="fa-solid fa-user"></i>
+                {{/if}}
+              </button>
+            </a>
+          </div>
+
+          <ul class="nav-list" id="nav-list">
+            <li class="nav-item">
+              <a href="/patient/{{patientId}}/dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a href="/patient/{{patientId}}/record">Record data</a>
+            </li>
+            <li class="nav-item">
+              <a href="/patient/{{patientId}}/history">View previous data</a>
+            </li>
+            <li class="nav-item">
+              <a href="/patient/{{patientId}}/leaderboard">Leaderboard</a>
+            </li>
+            <li class="nav-item">
+              <a href="/patient/{{patientId}}/settings">
+                <button class="user-icon icon-button" id="user-icon">
+                  {{#if isEngaged}}
+                    <img src="/images/user-shield-wide.svg" class="svg-white" alt="" height="50" width="50">
+                  {{else}}
+                    <i class="fa-solid fa-user"></i>
+                  {{/if}}
+                </button>
+              </a>
+            </li>
+          </ul>
+
+        </nav>
+      </header>
+    </div>
+
+    {{{body}}}
+
+    <div class="bottom-container"></div>
+
+</body>
+</html>
+
+<script>
+    const hamburger = document.getElementById('hamburger'); 
+    const navList = document.getElementById('nav-list'); 
+    const headerContainer = document.getElementById('header-container');
+    document.documentElement.className = localStorage.getItem('theme');
+
+    // Pulls theme from database
+    async function getTheme(){
+      const id = window.location.pathname.split("/")[2];
+      const themeURL = window.location.protocol + "//" + window.location.host + "/patient/" + id + "/theme";
+
+      let response = await fetch(themeURL);
+      let data = await response.json();
+      
+      localStorage.setItem('theme', data.theme);
+      document.documentElement.className = data.theme;
+    }
+
+    getTheme();
+
+    hamburger.addEventListener('click', () => {
+        navList.classList.toggle('show-mobile');
+    headerContainer.classList.toggle('hamburger-active'); 
+    })
+
+</script>

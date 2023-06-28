@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes@Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/clinician.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/dee80aadee.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+    <div class="header-container" id="header-container">
+        <header>
+            <nav>
+                <a href="#" class="site-name">
+                    Diabetes@Home
+                </a>
+                <button class="hamburger icon-button" id="hamburger">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <ul class="nav-list" id="nav-list">
+                    <li class="nav-item">
+                        <a href="/clinician/{{clinicianId}}/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/clinician/{{clinicianId}}/register_patient">Register patient</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/clinician/{{clinicianId}}/settings">Settings</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    {{{body}}}
+
+    <div class="bottom-container"></div>
+
+</body>
+</html>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navList = document.getElementById('nav-list');
+    const headerContainer = document.getElementById('header-container');
+    document.documentElement.className = localStorage.getItem('theme');
+    
+    async function getTheme(){
+      const id = window.location.pathname.split("/")[2];
+      const themeURL = window.location.protocol + "//" + window.location.host + "/clinician/" + id + "/theme";
+
+      let response = await fetch(themeURL);
+      let data = await response.json();
+      
+      localStorage.setItem('theme', data.theme);
+      document.documentElement.className = data.theme;
+    }
+
+    getTheme();
+
+    hamburger.addEventListener('click', () => {
+        navList.classList.toggle('show-mobile');
+        headerContainer.classList.toggle('hamburger-active');
+    })
+
+</script>

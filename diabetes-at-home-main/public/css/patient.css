@@ -1,0 +1,153 @@
+.icon-container {
+    display: table;
+}
+
+.icon-container a {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.record-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.record-prompt {
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.record-card {
+    width: 320px;
+    height: 20em;
+    background-color: var(--our-white);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.16);
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.record-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
+.record-input {
+    font-size: 20px;
+    margin-bottom: 10px;
+    width: 100px;
+}
+
+.comment-input {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.notification-circle {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background-color: var(--notification-color);
+    position: absolute;
+    left: 83%;
+    top: 9px;
+    border: 1px solid var(--our-grey);
+    text-align: center;
+}
+
+.notification-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    color: var(--our-white);
+}
+
+.history-date{
+    font-weight: 700;
+    font-size: 24px;
+    margin: 0 auto;
+    color: var(--primary-color);
+}
+
+.history-table {
+    margin: 0 auto;
+    table-layout: fixed;
+    text-align: center;
+    border-collapse: collapse;
+    width: 50%;
+    background-color: var(--our-white);
+}
+
+.history-table th {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.history-table td {
+    height: 30px;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.greyed-out {
+    color: var(--our-grey);
+}
+
+/* Leaderboard styling */
+.leaderboard-flexbox {
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: space-evenly;
+}
+
+.leaderboard-table {
+    border-spacing: 0px;
+    font-size: 20px;
+}
+
+.leaderboard-table th {
+    font-weight: 700;
+    background-color: var(--notification-color);
+    padding: 0px;
+    width: 210px;
+    height: 80px;
+}
+
+.leaderboard-table td {
+    padding: 0px;
+    background-color: var(--our-white);
+    text-align: center;
+    height: 60px;
+}
+
+.date {
+    width: 230px;
+}
+
+
+
+/* Mobile Formatting - Breakpoint at ~1670px */
+@media screen and (max-width: 1670px) {
+
+    .header-container.hamburger-active {
+        margin-bottom: 246px;
+    }
+
+    .history-table {
+        width: 90%;
+        border: 0px;
+        background-color: transparent;
+    }
+}

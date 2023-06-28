@@ -1,0 +1,21 @@
+<section class="page-content">
+  <div class="title-card">
+    <h2>Leaderboard</h2>
+  </div>
+  <div class="leaderboard-flexbox">
+    <table class="leaderboard-table">
+      <tr>
+        <th>Name</th>
+        <th>Engagement Rate (%)</th>
+        <th>Join Date</th>
+      </tr>
+      {{#each patients}}
+        <tr>
+          <td>{{screenName}}</td>
+          <td>{{engagementRate}}</td>
+          <td class="date">{{joinDate}}</td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+</section>

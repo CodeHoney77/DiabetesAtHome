@@ -1,0 +1,34 @@
+{
+  "name": "diabetes-at-home",
+  "version": "1.0.0",
+  "description": "INFO30005 Group Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/massiminoe/diabetes-at-home.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/massiminoe/diabetes-at-home/issues"
+  },
+  "homepage": "https://github.com/massiminoe/diabetes-at-home#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^4.6.0",
+    "epress": "0.0.1-security",
+    "express": "^4.17.3",
+    "express-flash": "^0.0.2",
+    "express-handlebars": "^6.0.4",
+    "express-session": "^1.17.3",
+    "mongoose": "^6.3.1",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0"
+  }
+}

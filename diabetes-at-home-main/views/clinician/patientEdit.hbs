@@ -1,0 +1,134 @@
+<section class="page-content">
+
+    <div class="title-card">
+        <h2>Edit Patient - {{firstName}} {{lastName}}</h2>
+    </div>
+
+    {{#each flash}}
+        <p class="alert text-center">{{this}}</p>
+    {{/each}}
+
+    <h4 class="text-center">Update Required Data</h4>
+
+    <form action="./edit/required" method="post">
+        <div class="clinician-flexbox">
+            <table class="clinician-table">
+                <tr>
+                    <th>Blood Glucose</th>
+                    <th>Weight</th>
+                    <th>Insulin</th>
+                    <th>Steps Taken</th>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="glucoseRequired" {{#if glucoseRequired}}checked{{/if}}></td>
+                    <td><input type="checkbox" name="weightRequired" {{#if weightRequired}}checked{{/if}}></td>
+                    <td><input type="checkbox" name="insulinRequired" {{#if insulinRequired}}checked{{/if}}></td>
+                    <td><input type="checkbox" name="exerciseRequired" {{#if exerciseRequired}}checked{{/if}}></td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div class="clinician-flexbox">
+            <button class="button" type="submit">Updated Required</button>
+        </div>
+    </form>
+
+    <h4 class="text-center">Update Patient Thresholds</h4>
+
+    <form action="./edit/thresholds" method="post">
+        <div class="clinician-flexbox">
+
+            <div class="table-container">
+                <div class="thresholds-row">
+                    <table class="clinician-table thresholds-table">
+                        <tr>
+                            <th>Blood Glucose Level (nmol/L) </th>
+                            <th>Lower Threshold</th>
+                            <th>Upper Threshold</th>
+                        </tr>
+                        <tr>
+                            <td><b>Current Values</b></td>
+                            <td class="greyed-out">{{glucoseMin}}</td>
+                            <td class="greyed-out">{{glucoseMax}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>New Values</b></td>
+                            <td><input type="number" class="cell-input" name="glucoseMin" min="0" max="1000"></td>
+                            <td><input type="number" class="cell-input" name="glucoseMax" min="0" max="1000"></td>
+                        </tr>
+                    </table>
+
+                    <table class="clinician-table thresholds-table">
+                        <tr>
+                            <th>Weight (kg)</th>
+                            <th>Lower Threshold</th>
+                            <th>Upper Threshold</th>
+                        </tr>
+                        <tr>
+                            <td><b>Current Values</b></td>
+                            <td class="greyed-out">{{weightMin}}</td>
+                            <td class="greyed-out">{{weightMax}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>New Values</b></td>
+                            <td><input type="number" class="cell-input" name="weightMin" min="0" max="1000"></td>
+                            <td><input type="number" class="cell-input" name="weightMax" min="0" max="1000"></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <br>
+
+                <div class="thresholds-row">
+                    <table class="clinician-table thresholds-table">
+                        <tr>
+                            <th>Insulin Doses Taken</th>
+                            <th>Lower Threshold</th>
+                            <th>Upper Threshold</th>
+                        </tr>
+                        <tr>
+                            <td><b>Current Values</b></td>
+                            <td class="greyed-out">{{insulinMin}}</td>
+                            <td class="greyed-out">{{insulinMax}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>New Values</b></td>
+                            <td><input type="number" class="cell-input" name="insulinMin" min="0" max="1000"></td>
+                            <td><input type="number" class="cell-input" name="insulinMax" min="0" max="1000"></td>
+                        </tr>
+                    </table>
+
+                    <div></div>
+
+                    <table class="clinician-table thresholds-table">
+                        <tr>
+                            <th>Steps Taken</th>
+                            <th>Lower Threshold</th>
+                            <th>Upper Threshold</th>
+                        </tr>
+                        <tr>
+                            <td><b>Current Values</b></td>
+                            <td class="greyed-out">{{exerciseMin}}</td>
+                            <td class="greyed-out">{{exerciseMax}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>New Values</b></td>
+                            <td><input type="number" class="cell-input" name="exerciseMin" min="0" max="1000000"></td>
+                            <td><input type="number" class="cell-input" name="exerciseMax" min="0" max="1000000"></td>
+                        </tr>
+                    </table>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <br>
+        <div class="clinician-flexbox">
+            <button class="button" type="submit">Update Thresholds</button>
+        </div>
+
+    </form>
+
+</section>

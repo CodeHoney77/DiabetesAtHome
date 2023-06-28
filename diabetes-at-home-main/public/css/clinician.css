@@ -1,0 +1,118 @@
+.clinician-flexbox {
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-content: space-evenly;
+}
+
+.clinician-table {
+    border-spacing: 0px;
+    font-size: 20px;
+}
+
+.clinician-table th {
+    font-weight: 700;
+    background-color: var(--notification-color);
+    padding: 0px;
+    width: 210px;
+    height: 80px;
+}
+
+.clinician-table td {
+    padding: 0px;
+    background-color: var(--our-white);
+    text-align: center;
+    height: 60px;
+}
+
+.wide {
+    width: 630px;
+}
+
+.date {
+    width: 230px;
+}
+
+.record-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.record-prompt {
+    margin-left: 8%;
+    margin-right: 8%;
+}
+
+.record-card {
+    width: 320px;
+    height: 20em;
+    background-color: var(--our-white);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.16);
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.record-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0px;
+    margin-bottom: 20px;
+}
+
+.record-input {
+    font-size: 20px;
+    margin-bottom: 10px;
+    width: 100px;
+}
+
+td.highlight {
+    background-color: var(--highlight-color);
+    border: 1px solid var(--our-black)
+}
+
+td.hide {
+    visibility: hidden;
+}
+
+.cell-input {
+    font-size: 20px;
+    width: 50%;
+}
+
+td.greyed-out {
+    background-color: var(--our-light-grey);
+}
+
+.table-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.table-container {
+    margin: 0 auto;
+}
+
+.thresholds-row {
+    display: flex;
+    justify-content: center
+}
+
+.clinician-table.thresholds-table {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* Mobile Formatting - Breakpoint at ~1670px */
+@media screen and (max-width: 1670px) {
+
+    .header-container.hamburger-active {
+        margin-bottom: 209px;
+    }
+}

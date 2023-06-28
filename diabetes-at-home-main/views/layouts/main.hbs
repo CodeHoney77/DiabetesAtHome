@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes@Home</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/static.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://kit.fontawesome.com/dee80aadee.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+    <div class="header-container" id="header-container">
+        <header>
+            <nav>
+                <a href="#" class="site-name">
+                    Diabetes@Home
+                </a>
+                <button class="hamburger icon-button" id="hamburger">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <ul class="nav-list" id="nav-list">
+                    <li class="nav-item">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/about_site">About this website</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/about_diabetes">About diabetes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/login">Sign in</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    {{{body}}}
+
+    <div class="bottom-container"></div>
+
+</body>
+</html>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navList = document.getElementById('nav-list');
+    const headerContainer = document.getElementById('header-container');
+    const theme = localStorage.getItem('theme');
+
+    function getTheme(){
+        if (typeof theme != 'undefined') {
+            document.documentElement.className = theme;
+        }
+    }
+
+    getTheme();
+
+    hamburger.addEventListener('click', () => {
+        navList.classList.toggle('show-mobile');
+        headerContainer.classList.toggle('hamburger-active');
+    })
+
+</script>

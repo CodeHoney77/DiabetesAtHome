@@ -1,0 +1,48 @@
+<section class="page-content">
+
+  <div class="title-card">
+    <h2>Dashboard</h2>
+  </div>
+
+  <div class="clinician-flexbox">
+
+    <table class="clinician-table">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Blood Glucose Level (mmol/L)</th>
+        <th>Weight (kg)</th>
+        <th>Insulin Doses Taken</th>
+        <th>Steps Taken</th>
+      </tr>
+
+      {{#each todayRecords}}
+        <tr>
+          <td><a href="/clinician/{{../clinicianId}}/patient/{{patientId}}/view">{{firstName}}</a></td>
+          <td>{{lastName}}</td>
+          <td {{#if glucoseOutThresh}}class="highlight"{{/if}}>{{glucose}}</td>
+          <td {{#if weightOutThresh}}class="highlight"{{/if}}>{{weight}}</td>
+          <td {{#if insulinOutThresh}}class="highlight"{{/if}}>{{insulin}}</td>
+          <td {{#if exerciseOutThresh}}class="highlight"{{/if}}>{{exercise}}</td>
+        </tr>
+      {{/each}}
+
+    </table>
+
+    <ul class="button-list">
+      <li>
+        <a href="/clinician/{{clinicianId}}/register_patient"><button
+            name="register"
+            class="button"
+          >Register Patient</button></a>
+      </li>
+      <li>
+        <a href="/clinician/{{clinicianId}}/comments"><button
+            name="comments"
+            class="button"
+          >See All Comments</button></a>
+      </li>
+    </ul>
+
+  </div>
+</section>

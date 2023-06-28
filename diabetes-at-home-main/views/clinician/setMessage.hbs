@@ -1,0 +1,24 @@
+<section class="page-content">
+ <div class="title-card">
+        <h2>Set Support Message - {{firstName}} {{lastName}}</h2>
+    </div>        
+
+    <h1><center>
+        <table class="clinician-table">
+          <tr>
+              <th>Support Message</th>
+              </tr>
+        </table>
+              </center>
+    </h1>
+    <form><center>
+        <textarea id="message" rows="10" cols="50">{{supportMessage}}</textarea>
+         <br>
+            <button id="set message" class="button center">Set Patient Message</button></center>
+</form>
+
+    <a href='/clinician/{{clinicianId}}/patient/{{patientId}}/view'>
+        <button name="back" class="button bottomLeft">Back</button>
+    </a>
+
+</section>

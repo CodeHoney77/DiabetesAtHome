@@ -1,0 +1,38 @@
+<section class="page-content">
+
+    <div class="content-container">
+
+        <div class="title-card">
+            <h2>Sign in</h2>
+        </div>
+
+        {{#each flash}}
+        <p class="alert text-center">{{this}}</p>
+        {{/each}}
+
+        <div class="sign-in-desktop-container">
+            <form class="sign-in-form" action="login" method="POST">
+                <div class="form-element">
+                    <div class="label-container">
+                        <label for="username">Email</label>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" id="username" name="username">
+                    </div>
+                </div>
+                <div class="form-element">
+                    <div class="label-container">
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" id="password" name="password">
+                    </div>
+                </div>
+
+                <input type="submit" value="Submit" class="button">
+            </form>
+        </div>
+        
+    </div>
+
+</section>

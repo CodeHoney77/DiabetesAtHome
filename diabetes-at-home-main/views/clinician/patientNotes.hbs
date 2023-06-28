@@ -1,0 +1,37 @@
+<section class="page-content">
+	<div class="title-card">
+		<h2>Notes - {{firstName}} {{lastName}}</h2>
+	</div>      
+
+	<div class="clinician-flexbox">
+    <table class="clinician-table">
+        <tr>
+            <th>Date</th>
+            <th>Note</th>
+        </tr>
+
+        {{#each note}}
+        <tr>
+            <td>{{date}}</td>
+            <td>{{note}}</td>
+        </tr>
+        {{/each}}
+
+    </table>
+
+		<form action="./notes/add" method="post">
+      <center>
+        <textarea id="message" name="note" rows="10" cols="50"></textarea>
+				<br>
+				<button id="submitnote" class="button center" type="submit">Create New Note</button>
+			</center>
+		</form>
+
+  </div>
+
+<a href='/clinician/{{clinicianId}}/patient/{{patientId}}/view'>
+    <button 
+    name="back" 
+    class="button bottomLeft">Back</button></a>
+
+</section>

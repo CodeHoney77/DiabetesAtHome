@@ -1,0 +1,98 @@
+<section class="page-content">
+
+  <div class="title-card">
+    <h2>Record Data</h2>
+  </div>
+
+  <div class="record-cards">
+    <div class="record-card">
+      <div class="record-title">Weight</div>
+    {{#if weight}}
+<form action="./record/weight" method="post">
+        <div class="record-prompt">What was your weight today?</div>
+        <div class="form-element">
+          <input class="record-input" type="number" step="any" name="value" id="weight" min="10" max="500" required /> kg
+        </div>
+        <div class="form-element">
+          Any additional comments?<br>
+          <textarea class="comment-input" type="textaxrea" name="comment" id="weight-comment" rows="6" cols="25"/></textarea>
+        </div>
+        <button class="button" type="submit">Record</button>
+      </form>
+    {{else}}
+      {{#if weightRequired}}
+      <div class="record-prompt greyed-out">Already recorded today</div>
+      {{else}}
+      <div class="record-prompt greyed-out">N/A</div>
+      {{/if}}
+    {{/if}}
+    </div>
+    <div class="record-card">
+        <div class="record-title">Blood Glucose Level</div>
+    {{#if glucose}}
+      <form action="./record/glucose" method="post">
+         <div class="record-prompt">What was your blood glucose level today?</div>
+        <div class="form-element">
+          <input class="record-input" type="number" step="any" name="value" id="blood-glucose" min="0" max="1000" required /> nmol/L
+        </div>
+        <div class="form-element">
+          Any additional comments?<br>
+          <textarea class="comment-input" type="textaxrea" name="comment" id="blood-glucose-comment" rows="5" cols="25"/></textarea>
+        </div>
+        <button class="button" type="submit">Record</button>
+      </form>
+   {{else}}
+      {{#if glucoseRequired}}
+      <div class="record-prompt greyed-out">Already recorded today</div>
+      {{else}}
+      <div class="record-prompt greyed-out">N/A</div>
+      {{/if}}
+    {{/if}}
+    </div>
+    <div class="record-card">
+        <div class="record-title">Insulin Doses</div>
+    {{#if insulin}}
+      <form action="./record/insulin" method="post">
+        <div class="record-prompt">How many insulin doses did you take today?</div>
+        <div class="form-element">
+          <input class="record-input" type="number" name="value" id="insulin" min="0" max="100" required /> doses
+        </div>
+        <div class="form-element">
+          Any additional comments?<br>
+          <textarea class="comment-input" type="textaxrea" name="comment" id="insulin-comment" rows="5" cols="25"/></textarea>
+        </div>
+        <button class="button" type="submit">Record</button>
+      </form>
+    {{else}}
+      {{#if insulinRequired}}
+      <div class="record-prompt greyed-out">Already recorded today</div>
+      {{else}}
+      <div class="record-prompt greyed-out">N/A</div>
+      {{/if}}
+    {{/if}}
+    </div>
+    <div class="record-card">
+        <div class="record-title">Step Count</div>
+    {{#if exercise}}
+      <form action="./record/exercise" method="post">
+        <div class="record-prompt">How many steps did you take today?</div>
+        <div class="form-element">
+          <input class="record-input" type="number" name="value" id="exercise" min="0" max="1000000" required /> steps
+        </div>
+        <div class="form-element">
+          Any additional comments?<br>
+          <textarea class="comment-input" type="textaxrea" name="comment" id="exercise-comment" rows="5" cols="25"/></textarea>
+        </div>
+        <button class="button" type="submit">Record</button>
+      </form>
+    {{else}}
+      {{#if exerciseRequired}}
+      <div class="record-prompt greyed-out">Already recorded today</div>
+      {{else}}
+      <div class="record-prompt greyed-out">N/A</div>
+      {{/if}}
+    {{/if}}
+    </div>
+  </div>
+
+</section>

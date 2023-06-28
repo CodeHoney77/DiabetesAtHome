@@ -1,0 +1,31 @@
+<section class="page-content">
+
+  <div class="title-card">
+    <h2>Comments</h2>
+  </div>
+
+  <div class="clinician-flexbox">
+
+    <table class="clinician-table">
+        <tr>
+            <th>Name</th>
+            <th>Data</th>
+            <th>Value</th>
+            <th class="date">Date</th>
+            <th class="wide">Comment</th>
+        </tr>
+
+        {{#each commentEntries}}
+        <tr>
+            <td><a href="/clinician/{{../clinicianId}}/patient/{{patientId}}/view">{{name}}</a></td>
+            <td>{{data}}</td>
+            <td>{{value}}</td>
+            <td class="date">{{dateString}}</td>
+            <td class="wide">{{comment}}</td>
+        </tr>
+        {{/each}}
+
+    </table>
+
+  </div>
+</section>

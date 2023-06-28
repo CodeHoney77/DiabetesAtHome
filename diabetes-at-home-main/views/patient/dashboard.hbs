@@ -1,0 +1,45 @@
+<section class="page-content" style="text-align: center">
+    <div class="title-card">
+        <h3>Message from clinician:</h3>
+        <p><i>{{clinicianMessage}}</i></p>
+    </div>
+
+    <ul class="button-list">
+        <li>
+            <a href="/patient/{{patientId}}/record"><button name="record" class="button">
+                Record data
+                {{#if numToRecord}}
+                    <div class="notification-circle">
+                        <div class="notification-content small-text">{{numToRecord}}</div>
+                    </div>
+                {{/if}}
+                </button></a>
+            <br>
+            <div class="very-small-text">
+                {{#if notYetRecorded}}
+                    You still need to record:<br>
+                    {{#each notYetRecorded}}
+                        <b>{{this}}</b><br>
+                    {{/each}}
+                {{/if}}
+            </div>
+        </li>
+        <li>
+            <a href="/patient/{{patientId}}/history"><button name="history" class="button">View previous data</button></a>
+        </li>
+        <li>
+            <a href="/patient/{{patientId}}/leaderboard"><button name="leaderboard" class="button">Leaderboards</button></a>
+        </li>
+        <li>
+            <a href="/patient/{{patientId}}/settings"><button name="settings" class="button">Settings</button></a>
+        </li>
+        <br>  <!-- Spacer -->
+        <li>
+            <a href="/patient/{{patientId}}/about_diabetes"><button name="about-diabetes" class="button">About diabetes</button></a>
+        </li>
+        <li>
+            <a href="/patient/{{patientId}}/about_site"><button name="about-site" class="button">About this website</button></a>
+        </li>
+    </ul>
+
+</section>

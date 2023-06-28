@@ -1,0 +1,82 @@
+<section class="page-content">
+
+  <div class="title-card">
+      <h2>Create Patient</h2>
+  </div>
+
+  <div class="create-patient">
+    <div class="record-title"></div>
+    <form action="./register_patient/created" method="post">
+      <div class="record-cards">
+      <div class="record-card">
+        <div class="record-prompt">First Name</div>
+        <div class="form-element">
+          <input class="record-input" type="text" name="firstname" id="fname" placeholder="Pat" required /> 
+        </div>
+        <div class="record-prompt">Last Name</div>
+        <div class="form-element"><br>
+          <input class="record-input" type="text" name="lastname" id="lname" placeholder="Tester" required/>
+        </div>
+        <div class="record-prompt">Email</div>
+        <div class="form-element"><br>
+          <input class="record-input" type="email" name="email" id="email" placeholder="pat.test@gmail.com" required/>
+        </div>
+        <div class="record-prompt">Birthday</div>
+        <div class="form-element"><br>
+          <input class="record-input" type="date" name="birthday" id="birthday" required/>
+        </div>
+      </div>
+        <div class="record-cards">
+        <div class="record-card">
+        <div class="record-prompt">Screen Name</div>
+        <div class="form-element"><br>
+          <input class="record-input" type="text" name="screenname" id="sname" placeholder="PatT"/>
+        </div>
+        <div class="record-prompt">Bio</div>
+        <div class="form-element"><br>
+          <textarea class="comment-input" type="textaxrea" name="bio" id="bio" rows="5" cols="25" placeholder="Brief bio of Patient..."/></textarea>
+        </div>
+        <div class="record-prompt">Support Message</div>
+        <div class="form-element"><br>
+          <textarea class="comment-input" type="textaxrea" name="supportmessage" id="smessage" rows="5" cols="25" placeholder="Have a great day Pat"/></textarea>
+        </div>
+      </div>
+      </div>
+      
+
+      <div class="record-card">
+        <div class="record-prompt">Thresholds (Leave empty if not required)</div>
+        <div class="form-element" id="moreText">Glucose Thresholds<br>
+          <input class="record-input" type="number" step="any" name="minGlucose" id="minGlucose" placeholder="Min" min="10" max="500"MIN/>
+          <input class="record-input" type="number" step="any" name="maxGlucose" id="maxGlucose" placeholder="Max" min="10" max="500" MAX/>
+        </div>
+        <div class="form-element" id="moreText">Weight Thresholds<br>
+          <input class="record-input" type="number" step="any" name="minWeight" id="minWeight" placeholder="Min" min="0" max="500" MIN/>
+          <input class="record-input" type="number" step="any" name="maxWeight" id="maxWeight" placeholder="Max" min="0" max="500" MAX/>
+        </div>
+        <div class="form-element" id="moreText"> Doses of Insulin Taken<br>
+          <input class="record-input" type="number" name="minInsulin" id="minInsulin" placeholder="Min" min="0" max="100" MIN/>
+          <input class="record-input" type="number" name="maxInsulin" id="maxInsulin" placeholder="Max" min="0" max="100" MAX/>
+        </div>
+        <div class="form-element" id="moreText">Steps Taken<br>
+          <input class="record-input" type="number" name="minExercise" id="minExercise" placeholder="Min" min="0" max="1000000" MIN/>
+          <input class="record-input" type="number" name="maxExercise" id="maxExercise" placeholder="Max" min="0" max="1000000" MAX/>
+        </div>
+      </div>
+
+      <div class="record-card">
+        <div class="record-prompt">Password</div>
+        <div class="form-element"><br>
+        Must be 8 letters long with at minimum one upper case letter and one number
+          <input class="record-input" type="password" name="password" id="password" placeholder="********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"required/>
+        </div>
+      </div>
+      </div>
+
+    <div class="clinician-flexbox">
+      <button class="button" type="submit">Create</button>
+    </div>
+    </form>
+  </div>
+   
+</section>

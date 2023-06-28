@@ -1,0 +1,36 @@
+<div class="title-card">
+	<h2>History</h2>
+</div>
+
+<section class="page-content">
+
+	{{#each data}}
+
+	<h3><center>{{date}}</center></h3>
+
+	<table class="history-table">
+
+		<tr>
+			<th>Blood Glucose Level</th>
+			<th>Weight</th>
+		</tr>
+
+		<tr>
+			<td>{{glucose}} {{#if (dataEntered glucose)}}nmol/L{{/if}}</td>
+			<td>{{weight}} {{#if (dataEntered weight)}}kg{{/if}}</td>
+		</tr>
+			
+		<tr>
+			<th>Insulin Doses Taken</th>
+			<th>Steps Taken</th>
+		</tr>
+
+		<tr>
+			<td>{{insulin}}</td>
+			<td>{{exercise}}</td>
+		</tr>
+
+	</table>
+	{{/each}}
+
+</section>

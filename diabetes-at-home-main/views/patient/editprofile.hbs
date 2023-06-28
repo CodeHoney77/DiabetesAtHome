@@ -1,0 +1,34 @@
+<section class="page-content">
+
+
+    <div class="title-card">
+      <h2>Edit Profile</h2>
+    </div>
+
+
+
+    <form action="./editprofile/updated" method="post">
+    <div class="record-cards">
+    <div class="record-card">
+        <div class="record-prompt">Screen Name</div>
+        <div class="form-element">
+          <input class="record-input" type="text" name="screenname" id="sname" placeholder="Screen Name"/> 
+        </div>
+        <div class="record-prompt">Bio</div>
+        <div class="form-element">
+          <textarea class="comment-input" type="textaxrea" name="bio" id="bio" rows="5" cols="20" placeholder="Edit bio..."/></textarea> 
+        </div>
+        <div class="record-prompt">Edit Password</div>
+        <div class="form-element"><br>
+        Must be 8 letters long with at minimum one upper case letter and one number
+          <input class="record-input" type="password" name="password" id="password" placeholder="********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
+        </div>
+        <br>
+        <br>
+        <button class="button" type="submit">Update</button>
+    </div>
+    </div>
+    </form>
+
+
+</section>
